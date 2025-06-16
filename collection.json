@@ -1,0 +1,115 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2025-06-16T00:00:00.000Z",
+  "__export_source": "insomnia.desktop.app:v2023.5.8",
+  "resources": [
+    {
+      "_id": "wrk_compli_check",
+      "name": "CompliCheck",
+      "type": "workspace",
+      "_type": "workspace"
+    },
+    {
+      "_id": "env_compli_check_base",
+      "parentId": "wrk_compli_check",
+      "name": "Base Environment",
+      "_type": "environment",
+      "data": {
+        "base_url": "http://localhost:5000/api"
+      }
+    },
+    {
+      "_id": "fld_empresa",
+      "parentId": "wrk_compli_check",
+      "name": "Empresas",
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_norma",
+      "parentId": "wrk_compli_check",
+      "name": "Normas",
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_get_empresas",
+      "parentId": "fld_empresa",
+      "name": "GET Empresas",
+      "method": "GET",
+      "url": "{{ base_url }}/empresa",
+      "_type": "request"
+    },
+    {
+      "_id": "req_post_empresa",
+      "parentId": "fld_empresa",
+      "name": "POST Empresa",
+      "method": "POST",
+      "url": "{{ base_url }}/empresa",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Empresa X\",\n  \"cnpj\": \"12345678000199\",\n  \"setor\": \"Tecnologia\"\n}"
+      },
+      "_type": "request"
+    },
+    {
+      "_id": "req_put_empresa",
+      "parentId": "fld_empresa",
+      "name": "PUT Empresa",
+      "method": "PUT",
+      "url": "{{ base_url }}/empresa",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"id\": 1,\n  \"nome\": \"Empresa Y\",\n  \"cnpj\": \"12345678000199\",\n  \"setor\": \"Saúde\"\n}"
+      },
+      "_type": "request"
+    },
+    {
+      "_id": "req_delete_empresa",
+      "parentId": "fld_empresa",
+      "name": "DELETE Empresa",
+      "method": "DELETE",
+      "url": "{{ base_url }}/empresa/1",
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_normas",
+      "parentId": "fld_norma",
+      "name": "GET Normas",
+      "method": "GET",
+      "url": "{{ base_url }}/norma",
+      "_type": "request"
+    },
+    {
+      "_id": "req_post_norma",
+      "parentId": "fld_norma",
+      "name": "POST Norma",
+      "method": "POST",
+      "url": "{{ base_url }}/norma",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"descricao\": \"Norma Ambiental\",\n  \"categoria\": \"Ambiental\",\n  \"dataLimite\": \"2025-12-31\",\n  \"empresaId\": 1\n}"
+      },
+      "_type": "request"
+    },
+    {
+      "_id": "req_put_norma",
+      "parentId": "fld_norma",
+      "name": "PUT Norma",
+      "method": "PUT",
+      "url": "{{ base_url }}/norma",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"id\": 1,\n  \"descricao\": \"Norma de Segurança\",\n  \"categoria\": \"Segurança\",\n  \"dataLimite\": \"2025-10-10\",\n  \"empresaId\": 1\n}"
+      },
+      "_type": "request"
+    },
+    {
+      "_id": "req_delete_norma",
+      "parentId": "fld_norma",
+      "name": "DELETE Norma",
+      "method": "DELETE",
+      "url": "{{ base_url }}/norma/1",
+      "_type": "request"
+    }
+  ]
+}

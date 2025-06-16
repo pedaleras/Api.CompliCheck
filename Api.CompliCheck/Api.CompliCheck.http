@@ -1,0 +1,6 @@
+@Api.CompliCheck_HostAddress = http://localhost:5228
+
+GET {{Api.CompliCheck_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
